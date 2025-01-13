@@ -133,11 +133,11 @@ const App = () => {
   }, [ws, playerNumber, gameStarted]);
 
   return (
-    <div className="App flex items-center justify-center min-h-screen bg-black">
-      <div className="text-center">
-        <Card className="border-none bg-black/70 backdrop-blur p-6 rounded-lg">
+    <div className="App flex items-center justify-center min-h-screen bg-black w-full flex">
+      <div className="text-center w-full">
+        <Card className="border-none bg-black/70 backdrop-blur p-6 rounded-lg w-full">
           <CardHeader>
-            <CardTitle className="text-4xl font-bold text-center text-white mb-4">
+            <CardTitle className="text-4xl font-bold text-center text-white">
               Multiplayer Pong Game
             </CardTitle>
           </CardHeader>
@@ -158,12 +158,14 @@ const App = () => {
                 Join Room
               </Button>
             </div>
-            <div className="mt-4 text-center text-gray-400">
+            <div className="mt-4 text-center text-gray-400 w-full flex justify-center">
               {roomId ? `Room ID: ${roomId} • Player ${playerNumber}` : 'Waiting for another player to join...'}
             </div>
           </CardContent>
         </Card>
-        <div ref={canvasRef} className="mt-8"></div>
+        <div ref={canvasRef} className="mt-8 flex justify-center items-center">
+          {/* The canvas will be centered within this div */}
+        </div>
       </div>
     </div>
   );
